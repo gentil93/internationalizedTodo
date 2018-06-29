@@ -1,0 +1,22 @@
+{
+  "pt-BR": {
+    "tasks": "Tarefas",
+    "about": "Sobre",
+    "register": "Cadastro",
+    "registerTask": "Adicione uma tarefa",
+    "description": "Descricao",
+    "date": "Data",
+    "actions": "Ações",
+    "us": "Nos"
+  },
+  "en-US": {
+    "tasks": "Tasks",
+    "about": "About",
+    "register": "Register",
+    "registerTask": "Add a task",
+    "description": "Description",
+    "date": "Date",
+    "actions": "Actions",
+    "us": "us"
+  }
+}

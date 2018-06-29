@@ -5,11 +5,11 @@ import { bindActionCreators } from 'redux'
 import Grid from '../template/grid';
 import IconButton from '../template/iconButton'
 import { changeDescription, search, add, clear } from './todoActions'
+import { translator } from '../internationalization/stringParser'
 
 class TodoForm extends Component {
     constructor(props) {
         super(props)
-        console.log(this)
         this.keyHandler = this.keyHandler.bind(this)
     }
 
@@ -28,13 +28,13 @@ class TodoForm extends Component {
     }
 
     render() {
-        const { add, search, description, clear } = this.props
+        const { add, search, description, clear, locale } = this.props
         return  (
             <div role='form' className='todoForm'>
         
                 <Grid cols='12 9 10'>
                     <input id='description' className='form-control'
-                    placeholder='Adicione uma tarefa'
+                    placeholder={translator('registerTask', locale)}
                     onChange={this.props.changeDescription}
                     value={this.props.description}
                     onKeyUp={this.keyHandler}></input>
@@ -52,7 +52,8 @@ class TodoForm extends Component {
 }
 
 const mapStateToProps = state => ({
-    description: state.todo.description
+    description: state.todo.description,
+    locale: state.app.locale
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({
